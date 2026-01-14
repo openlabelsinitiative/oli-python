@@ -11,7 +11,6 @@ class API:
         """
         self.oli = oli_client
         self.api_url = "https://api.openlabelsinitiative.org"
-        self.api_url = "http://0.0.0.0:8080" # testing
         self.api_key = api_key
 
     ### OLI Tags and Value Sets maintained in Github ###
