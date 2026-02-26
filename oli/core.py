@@ -288,6 +288,10 @@ class OLI:
             return self.trust.trust_table
 
     def add_trust_list(self, owner_name: str='private_node', attesters: list=[], attestations: list=[], attester_address: str='0x0000000000000000000000000000000000000000') -> None:
+        # if no trust node set, default to attester_address
+        if not hasattr(self, 'source_address') or self.source_address is None:
+            self.source_address = attester_address
+
         # add the trust list to the trust graph
         success = self.trust.add_trust_list(owner_name, attesters, attestations, attester_address)
         if success:
